@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Entry</title>
+</head>
+<body>
+
+{% extends "learning_webs/base.html" %}
+{% load bootstrap4 %}
+
+{% block header %}
+    <h2>New Entry: <a href="{% url 'learning_webs:topic' topic.id %}">{{ topic }}</a></h2>
+{% endblock header %}
+
+{% block content %}
+    <form action="{% url 'learning_webs:new_entry' topic.id %}" method='post' class="form col-8">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        {% buttons %}
+        <button name='submit' class="btn btn-outline-primary btn-lg">add entry</button>
+        {% endbuttons %}
+    </form>
+
+{% endblock content %}
+
+</body>
+</html>

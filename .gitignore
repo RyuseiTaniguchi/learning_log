@@ -1,0 +1,3 @@
+learning_web/
+__pycache__/
+*.sqlite3
