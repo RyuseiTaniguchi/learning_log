@@ -1,3 +1,5 @@
-learning_web/
-__pycache__/
-*.sqlite3
+learning_web
+__pycache__
+staticfiles
+local_settings.py
+db.sqlite3
