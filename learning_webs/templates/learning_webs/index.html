@@ -8,25 +8,24 @@
 {% extends "learning_webs/base.html" %}
 {% block header %}
     <div class="janbotoro">
-        <h1>Track your learning.</h1>
+        <h1>今までの学習の履歴</h1>
     </div>
 {% endblock header %}
 
 {% block content %}
     {% if user.is_authenticated %}
     <h3>
-        <p>Let's get started from <a href="{% url 'learning_webs:topics' %}">Topics</a>.</p>
+        <p><a href="{% url 'learning_webs:topics' %}">トピック</a>から始めましょう。</p>
     </h3>
     {% else %}
         <h3>
-            <a href="{% url 'users:register' %}">Register an account</a> to make
-     your own Learning Log, and list the topics you're learning about.
+            <a href="{% url 'users:register' %}">アカウントを登録</a>して、学びを見える化しましょう。
+            <br><br>何をどこまで学習したかが一目瞭然！
         </h3>
     {% endif %}
-
+    <br>
     <h3>
-        Whenever you learn something new about a topic, make an entry
- summarizing what you've learned.
+        勉強していることがあるなら、習ったことを要約して保存しましょう。
     </h3>
 {% endblock content %}
 </body>
